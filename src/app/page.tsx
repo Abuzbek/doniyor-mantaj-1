@@ -3,7 +3,7 @@ import style from "./page.module.css";
 export default function Home() {
   return (
     <div className={style.main}>
-      <div className="2xl:max-w-[1400px] max-w-7xl m-auto flex justify-end items-end z-0 absolute w-full h-full top-0 left-1/2 transform -translate-x-1/2">
+      <div className="2xl:max-w-[1532px] max-w-7xl m-auto flex justify-end items-end z-0 absolute w-full h-full top-0 left-1/2 transform -translate-x-1/2">
         <img src='/images/doniyor.png' alt="Doniyor Abduganiyev" className="max-w-full h-auto object-contain w-[60%]"/>
       </div>
       <div className="max-w-[1132px] mx-auto grid grid-cols-12 gap-6 relative z-10 content-between h-full">
