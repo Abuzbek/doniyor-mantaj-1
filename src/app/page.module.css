@@ -1,0 +1,47 @@
+.main {
+  background: linear-gradient(
+    74deg,
+    #1a0331 -0.6%,
+    #2f0743 50.38%,
+    #4b044c 101.36%
+  );
+  @apply w-screen h-screen pt-10 relative;
+}
+.main h3 {
+  color: #e59aff;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.72px;
+  text-transform: uppercase;
+}
+.main .starting_date {
+  height: 46px;
+  @apply flex gap-2 items-center border-[1.5px] border-white px-5 py-3 rounded-xl;
+}
+.main .starting_date span {
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.54px;
+}
+.main .indicator {
+  background: linear-gradient(84deg, #6950ff 0%, #6950ff 0.01%, #c631fb 100%),
+    #d9d9d9;
+  @apply min-w-[16px] h-4 rounded-full;
+}
+
+.main .button {
+  border-radius: 20px;
+  background: linear-gradient(84deg, #6950ff 0%, #6950ff 0.01%, #c631fb 100%);
+  box-shadow: 0px 15px 36px 0px rgba(198, 49, 251, 0.3);
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  @apply px-[60px] py-6;
+}
