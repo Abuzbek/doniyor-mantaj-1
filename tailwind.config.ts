@@ -25,8 +25,8 @@ const config: Config = {
       // => @media (min-width: 1024px) { ... }
 
       // => @media (min-width: 1132px) { ... }
-      xl: "1132px",
-      "2xl": "1440px",
+      xl: "1441px",
+      "2xl": "1600px",
     },
   },
   plugins: [],
