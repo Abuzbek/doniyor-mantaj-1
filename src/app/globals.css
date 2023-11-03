@@ -17,6 +17,10 @@
   }
 }
 
+html {
+  font-size: 0.052083333333333336vw;
+}
+
 body {
   /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(

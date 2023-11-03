@@ -15,18 +15,18 @@ const config: Config = {
       },
     },
     screens: {
-      sm: "640px",
-      // => @media (min-width: 640px) { ... }
+      sm: "640rem",
+      // => @media (min-width: 640rem) { ... }
 
-      md: "768px",
-      // => @media (min-width: 768px) { ... }
+      md: "768rem",
+      // => @media (min-width: 768rem) { ... }
 
-      lg: "1024px",
-      // => @media (min-width: 1024px) { ... }
+      lg: "1024rem",
+      // => @media (min-width: 1024rem) { ... }
 
-      // => @media (min-width: 1132px) { ... }
-      xl: "1441px",
-      "2xl": "1600px",
+      // => @media (min-width: 1132rem) { ... }
+      xl: "1441rem",
+      "2xl": "1600rem",
     },
   },
   plugins: [],
