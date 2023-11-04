@@ -35,7 +35,7 @@ export default function Home() {
               <img
                 src="/images/doniyor.png"
                 alt="Doniyor Abduganiyev"
-                className="max-w-full h-auto w-[80%] mx-auto object-contain md:hidden block"
+                className="max-w-full h-auto w-[90%] mx-auto object-contain md:hidden block"
               />
               <a
                 className={`md:hidden block ` + style.button}
