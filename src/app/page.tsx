@@ -8,11 +8,9 @@ import {
 } from "react";
 import Modal, { IModalMethods } from "./components/Modal";
 import style from "./page.module.css";
-import InputMask from "react-input-mask";
+import  "./page.css";
 import { writeUserData } from "./database";
 import { useRouter } from "next/navigation";
-import Script from "next/script";
-import Head from "next/head";
 import PhoneInput from "react-phone-number-input";
 
 function useRegex(input: string) {
@@ -22,7 +20,7 @@ function useRegex(input: string) {
 
 export default function Home() {
   const modalRef = useRef<IModalMethods>();
-  const [data, setData] = useState({ name: "", phone: "998" });
+  const [data, setData] = useState({ name: "", phone: "" });
   const [error, setError] = useState({ name: "", phone: "" });
   const [loading, setLoading] = useState(false);
   const router = useRouter();
@@ -192,6 +190,7 @@ export default function Home() {
             </div>
             <div className="form_control">
               <PhoneInput
+                className="py-3 px-4 rounded-xl bg-[#eaeaea] text-[#232323] w-full"
                 international
                 defaultCountry="UZ"
                 value={data.phone}
