@@ -1,7 +1,18 @@
+import Script from "next/script";
 import style from "./page.module.css";
 export default function Congratulations() {
   return (
     <div className={style.main}>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-E0VCR72V8Q" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-E0VCR72V8Q');
+        `}
+      </Script>
       <div className="content max-w-2xl mx-auto flex items-center flex-col md:gap-10 gap-6 w-full">
         <img src="/images/congratulation.png" alt="Congratulations" className="max-w-[120px]" />
         <div className="flex flex-col md:gap-6 gap-4 items-center text-center">

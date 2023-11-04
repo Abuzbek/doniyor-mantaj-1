@@ -11,6 +11,7 @@ import style from "./page.module.css";
 import InputMask from "react-input-mask";
 import { writeUserData } from "./database";
 import { useRouter } from "next/navigation";
+import Script from "next/script";
 function useRegex(input: string) {
   let regex = /\+\d{3} \(\d{2}\) \d{3}-\d{2}-\d{2}/i;
   return regex.test(input);
@@ -71,6 +72,16 @@ export default function Home() {
   // }, []);
   return (
     <div className={style.main}>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-E0VCR72V8Q" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-E0VCR72V8Q');
+        `}
+      </Script>
       <div className="2xl:max-w-[1532px] max-w-7xl m-auto flex justify-end items-end z-0 absolute w-full h-full top-0 left-1/2 transform -translate-x-1/2">
         <img
           src="/images/doniyor.png"
