@@ -81,7 +81,7 @@ export default function Home() {
         />
       </div>
       <div className="max-w-[1132px] mx-auto grid lg:grid-cols-12 lg:gap-x-6 sm:gap-y-[54px] xs:gap-y-5 gap-y-4 relative z-10 2xl:content-between h-full lg:px-0 px-4">
-        <div className="flex items-center sm:justify-between justify-center md:flex-wrap xs:text-start text-center gap-4 lg:col-span-7">
+        <div className="flex items-center sm:justify-between justify-center md:flex-nowrap flex-wrap xs:text-start text-center gap-4 lg:col-span-8">
           <h3>3 kunlik bepul darslar</h3>
           <div className={style.starting_date}>
             <span className="relative flex h-3 w-3">
