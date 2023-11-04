@@ -4,25 +4,6 @@ import Head from "next/head";
 export default function Congratulations() {
   return (
     <div className={style.main}>
-      <Head>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-E0VCR72V8Q" />
-        <Script
-          id="google-analytics"
-          src="/js/ga.js"
-          onLoad={() => {
-            console.log("Script has loaded");
-          }}
-        />
-        <Script src="/js/pixel.js" id="facebook-pixel" />
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=1666039500550477&ev=PageView&noscript=1"
-          />
-        </noscript>
-      </Head>
       <div className="content max-w-2xl mx-auto flex items-center flex-col md:gap-10 gap-6 w-full">
         <img
           src="/images/congratulation.png"
