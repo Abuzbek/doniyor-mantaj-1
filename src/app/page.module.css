@@ -5,7 +5,7 @@
     #2f0743 50.38%,
     #4b044c 101.36%
   );
-  @apply w-screen h-screen pt-10 relative;
+  @apply w-screen md:h-screen h-auto sm:pt-10 pt-5 relative sm:pb-0 pb-5;
 }
 .main h3 {
   color: #e59aff;
@@ -43,10 +43,11 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  @apply px-[60px] py-6;
+
+  @apply px-[60px] py-6 md:w-auto w-full text-center;
 }
 
-@media (min-aspect-ratio: 2.41/1) {
+@media (min-aspect-ratio: 2.4/1) {
   .main img {
     width: 50% !important;
   }
