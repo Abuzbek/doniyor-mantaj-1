@@ -9,6 +9,7 @@ import {
 import Modal, { IModalMethods } from "./components/Modal";
 import style from "./page.module.css";
 import InputMask from "react-input-mask";
+import { writeUserData } from "./database";
 function useRegex(input: string) {
   let regex = /\+\d{3} \(\d{2}\) \d{3}-\d{2}-\d{2}/i;
   return regex.test(input);
@@ -33,7 +34,8 @@ export default function Home() {
           name: "",
           phone: "",
         }));
-        console.log(data);
+        var reg = /\D/g;
+        writeUserData({ ...data, phone: `+${data.phone.replace(reg, "")}` });
       } else {
         if (!useRegex(data.phone)) {
           setError((_error) => ({
@@ -94,7 +96,7 @@ export default function Home() {
                 className="max-w-full h-auto w-[90%] mx-auto object-contain md:hidden block"
               />
               <button
-                onClick={()=> modalRef.current?.openModal()}
+                onClick={() => modalRef.current?.openModal()}
                 className={`md:hidden block ` + style.button}
                 role="button"
               >
@@ -138,7 +140,11 @@ export default function Home() {
             </div>
           </div>
           <div className="flex items-center">
-            <button onClick={()=> modalRef.current?.openModal()} className={`md:block hidden ` + style.button} role="button">
+            <button
+              onClick={() => modalRef.current?.openModal()}
+              className={`md:block hidden ` + style.button}
+              role="button"
+            >
               Ro‘yxatdan o‘tish
             </button>
           </div>
