@@ -46,7 +46,7 @@
   @apply px-[60px] py-6;
 }
 
-@media (min-aspect-ratio: 2.4/1) {
+@media (min-aspect-ratio: 2.41/1) {
   .main img {
     width: 50% !important;
   }
