@@ -16,7 +16,8 @@ export default function Congratulations() {
           <a
             className={style.button}
             role="button"
-            href="#!"
+            href="https://t.me/doniyorfx3kunlikdars"
+            target="_blank"
           >
             <img src="/images/telegram.svg" alt="Telegram" />
             Telegram guruhga o‘tish

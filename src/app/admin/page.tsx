@@ -1,9 +1,11 @@
 "use client";
 import { redirect } from "next/navigation";
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, FormEvent, useEffect, useState } from "react";
 import { getUserData } from "../database";
 import { firebaseAuth } from "../../../initFirebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { User, signInWithEmailAndPassword } from "firebase/auth";
+import LoginForm from "./LoginForm";
+import AdminPage from "./AdminPage";
 type Props = {};
 
 // const admin = {
@@ -13,15 +15,20 @@ type Props = {};
 
 const Admin: FC<Props> = () => {
   const [login, setLogin] = useState(false);
-  const [email, setEmail] = useState<string>("admin@gmail.com");
-  const [password, setPassword] = useState<string>("*3=)v8YP5w8£cT%R3eR2BQ?}C");
+  const [user, setUser] = useState<User>();
+  const [data, setData] = useState<{name: string, phone: string}[]>([]);
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const auth = firebaseAuth;
-  const submit = () => {
+  const submit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
-        const user = userCredential.user;
-        console.log(user);
+        const userId = userCredential.user;
+        console.log(userId);
+        setLogin(true);
+        setUser(userId);
         // ...
       })
       .catch((error) => {
@@ -29,67 +36,20 @@ const Admin: FC<Props> = () => {
         const errorMessage = error.message;
       });
   };
-  useEffect(() => {
-    submit();
-  }, []);
-  if (!login) {
-    return (
-      <section className="bg-gray-50 dark:bg-gray-900">
-        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-          <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-            <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                Sign in to Admin
-              </h1>
-              <form className="space-y-4 md:space-y-6" action="#">
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    Your email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="name@company.com"
-                    required
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="password"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="••••••••"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    required
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                >
-                  Sign in
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  } else {
-    getUserData();
-    return <div>Admin</div>;
-  }
+    useEffect(() => {
+      const data = getUserData()
+    }, []);
+  return !login ? (
+    <LoginForm
+      email={email}
+      setEmail={setEmail}
+      password={password}
+      setPassword={setPassword}
+      submit={submit}
+    />
+  ) : (
+    <AdminPage users={data} />
+  );
 };
 
 export default Admin;
