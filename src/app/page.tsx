@@ -73,25 +73,7 @@ export default function Home() {
   // }, []);
   return (
     <div className={style.main}>
-      <Head>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-E0VCR72V8Q" />
-        <Script
-          id="google-analytics"
-          src="/js/ga.js"
-          onLoad={() => {
-            console.log("Script has loaded");
-          }}
-        />
-        <Script src="/js/pixel.js" id="facebook-pixel" />
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=1666039500550477&ev=PageView&noscript=1"
-          />
-        </noscript>
-      </Head>
+      
       <div className="2xl:max-w-[1532px] max-w-7xl m-auto flex justify-end items-end z-0 absolute w-full h-full top-0 left-1/2 transform -translate-x-1/2">
         <img
           src="/images/doniyor.png"
