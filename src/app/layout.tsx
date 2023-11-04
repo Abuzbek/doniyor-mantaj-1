@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { Html } from "next/document";
 import Head from "next/head";
 import Script from "next/script";
 const inter = Montserrat({ subsets: ["latin"] });
@@ -17,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <Html lang="en">
+    <html lang="en">
       <Head>
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-E0VCR72V8Q" />
         <Script
@@ -38,6 +37,6 @@ export default function RootLayout({
         </noscript>
       </Head>
       <body className={inter.className}>{children}</body>
-    </Html>
+    </html>
   );
 }
