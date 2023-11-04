@@ -8,7 +8,7 @@ import {
 } from "react";
 import Modal, { IModalMethods } from "./components/Modal";
 import style from "./page.module.css";
-import  "./page.css";
+import "./page.css";
 import { writeUserData } from "./database";
 import { useRouter } from "next/navigation";
 import PhoneInput from "react-phone-number-input";
@@ -35,7 +35,7 @@ export default function Home() {
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (data.phone && data.name) {
-      if (useRegex(data.phone) && data.name.length > 3) {
+      if (data.phone && data.name.length > 3) {
         setLoading(true);
         setError((_error) => ({
           name: "",
@@ -49,7 +49,7 @@ export default function Home() {
         router.push("/congratulations");
         setLoading(false);
       } else {
-        if (!useRegex(data.phone)) {
+        if (!data.phone) {
           setError((_error) => ({
             ...error,
             phone: "Telefon raqamingizni to'liq kiriting",
@@ -194,9 +194,9 @@ export default function Home() {
                 international
                 defaultCountry="UZ"
                 value={data.phone}
-                onChange={(e: any) =>
-                  setData((_data) => ({ ..._data, phone: e }))
-                }
+                onChange={(e: any) => {
+                  setData((_data) => ({ ..._data, phone: e }));
+                }}
               />
               <small className="text-red-500">{error.phone}</small>
             </div>
@@ -213,7 +213,7 @@ export default function Home() {
           <svg
             stroke="currentColor"
             fill="none"
-            stroke-width="0"
+            strokeWidth="0"
             viewBox="0 0 24 24"
             height="1em"
             width="1em"
@@ -222,8 +222,8 @@ export default function Home() {
           >
             <path
               opacity="0.2"
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
               fill="currentColor"
             ></path>
