@@ -169,7 +169,7 @@ export default function Home() {
             <h3 className="text-[#222] md:text-[32px] text-xl font-bold leading-[130%]">
               Bepul darslarga ro‘xatdan o‘tish
             </h3>
-            <button className="text-3xl">&times;</button>
+            <button className="text-3xl" onClick={()=>modalRef.current?.closeModal()}>&times;</button>
           </div>
           <p className="text-[#222] md:text-lg font-medium leading-[130%]">
             Online darslarda ishtirok etish uchun ism va telefon raqamingizni
