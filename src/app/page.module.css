@@ -7,6 +7,20 @@
   );
   @apply w-screen md:h-screen h-auto sm:pt-10 pt-5 relative sm:pb-0 pb-5;
 }
+.main .radial_gradient {
+  width: 100%;
+  max-width: 834px;
+  border-radius: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(255, 155, 239, 0.2) 0%,
+    rgba(255, 155, 239, 0) 100%
+  );
+}
 .main h3 {
   color: #e59aff;
   font-style: normal;
@@ -17,7 +31,6 @@
   @apply xs:text-2xl text-lg;
 }
 .main .starting_date {
-  
   @apply flex gap-2 items-center border-[1.5px] border-white px-5 py-3 rounded-xl xs:h-[46px] h-10;
 }
 .main .starting_date span {

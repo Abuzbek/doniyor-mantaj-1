@@ -7,7 +7,7 @@ export default function Home() {
         <img
           src="/images/doniyor.png"
           alt="Doniyor Abduganiyev"
-          className="max-w-full h-auto object-contain w-[60%] md:block hidden"
+          className="max-w-full h-auto object-contain w-[60%] md:block hidden relative z-10"
         />
       </div>
       <div className="max-w-[1132px] mx-auto grid lg:grid-cols-12 lg:gap-x-6 sm:gap-y-[54px] xs:gap-y-5 gap-y-2 relative z-10 2xl:content-between h-full lg:px-0 px-4">
