@@ -1,6 +1,62 @@
-import Image from "next/image";
+"use client";
+import {
+  FormEvent,
+  FormEventHandler,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import Modal, { IModalMethods } from "./components/Modal";
 import style from "./page.module.css";
+import InputMask from "react-input-mask";
+function useRegex(input: string) {
+  let regex = /\+\d{3} \(\d{2}\) \d{3}-\d{2}-\d{2}/i;
+  return regex.test(input);
+}
+
 export default function Home() {
+  const modalRef = useRef<IModalMethods>();
+  const [data, setData] = useState({ name: "", phone: "998" });
+  const [error, setError] = useState({ name: "", phone: "" });
+  const onChangeInputMask = (value: string) => {
+    if (!value.includes("998")) {
+      setData((_data) => ({ ..._data, phone: "998" }));
+    } else {
+      setData((_data) => ({ ..._data, phone: value }));
+    }
+  };
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (data.phone && data.name) {
+      if (useRegex(data.phone) && data.name.length > 3) {
+        setError((_error) => ({
+          name: "",
+          phone: "",
+        }));
+        console.log(data);
+      } else {
+        if (!useRegex(data.phone)) {
+          setError((_error) => ({
+            ...error,
+            phone: "Telefon raqamingizni to'liq kiriting",
+          }));
+        } else {
+          setError((_error) => ({
+            ...error,
+            name: "Ismingizni to'liq kiriting",
+          }));
+        }
+      }
+    } else {
+      setError({
+        name: "Ismingizni kiriting",
+        phone: "Telefon raqamingizni kiriting",
+      });
+    }
+  };
+  // useEffect(() => {
+  //   modalRef.current?.openModal();
+  // }, []);
   return (
     <div className={style.main}>
       <div className="2xl:max-w-[1532px] max-w-7xl m-auto flex justify-end items-end z-0 absolute w-full h-full top-0 left-1/2 transform -translate-x-1/2">
@@ -37,13 +93,13 @@ export default function Home() {
                 alt="Doniyor Abduganiyev"
                 className="max-w-full h-auto w-[90%] mx-auto object-contain md:hidden block"
               />
-              <a
+              <button
+                onClick={()=> modalRef.current?.openModal()}
                 className={`md:hidden block ` + style.button}
                 role="button"
-                href="#!"
               >
                 Ro‘yxatdan o‘tish
-              </a>
+              </button>
             </div>
             <div className="flex flex-col xs:gap-5 gap-4 md:max-w-lg max-w-full">
               <h4 className="text-lg text-white uppercase font-semibold">
@@ -82,17 +138,57 @@ export default function Home() {
             </div>
           </div>
           <div className="flex items-center">
-            <a
-              className={`md:block hidden ` + style.button}
-              role="button"
-              href="#!"
-            >
+            <button onClick={()=> modalRef.current?.openModal()} className={`md:block hidden ` + style.button} role="button">
               Ro‘yxatdan o‘tish
-            </a>
+            </button>
           </div>
         </div>
         <div></div>
       </div>
+      <Modal ref={modalRef} title="Bepul darslarga ro‘xatdan o‘tish">
+        <form onSubmit={onSubmit} className="flex flex-col gap-5">
+          <div className="title flex items-center justify-between">
+            <h3 className="text-[#222] md:text-[32px] text-xl font-bold leading-[130%]">
+              Bepul darslarga ro‘xatdan o‘tish
+            </h3>
+            <button className="text-3xl">&times;</button>
+          </div>
+          <p className="text-[#222] md:text-lg font-medium leading-[130%]">
+            Online darslarda ishtirok etish uchun ism va telefon raqamingizni
+            qoldiring
+          </p>
+          <div className="form_group grid md:grid-cols-2 gap-4">
+            <div className="form_control">
+              <input
+                className="py-3 px-4 rounded-xl bg-[#eaeaea] text-[#232323] w-full"
+                type="text"
+                value={data.name}
+                placeholder="Ism"
+                onChange={(e) =>
+                  setData((_data) => ({ ..._data, name: e.target.value }))
+                }
+              />
+              <small className="text-red-500">{error.name}</small>
+            </div>
+            <div className="form_control">
+              <InputMask
+                className="py-3 px-4 rounded-xl bg-[#eaeaea] text-[#232323] w-full"
+                mask="+999 (99) 999-99-99"
+                value={data.phone}
+                type="text"
+                onChange={(e) => onChangeInputMask(e.target.value)}
+                placeholder="+998 (__) ___-__-__"
+              />
+              <small className="text-red-500">{error.phone}</small>
+            </div>
+          </div>
+          <div className="submit_button">
+            <button className={style.submit_button} role="button" type="submit">
+              Telegram guruhga o‘tish
+            </button>
+          </div>
+        </form>
+      </Modal>
     </div>
   );
 }

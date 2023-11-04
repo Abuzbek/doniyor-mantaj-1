@@ -1,0 +1,19 @@
+.main {
+  background: linear-gradient(
+    74deg,
+    #1a0331 -0.6%,
+    #2f0743 50.38%,
+    #4b044c 101.36%
+  );
+  @apply w-screen h-screen relative text-white flex items-center;
+}
+
+.main .button {
+  border-radius: 20px;
+  background: #036be5;
+  box-shadow: 0px 15px 36px 0px rgba(97, 203, 255, 0.22);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @apply md:text-lg text-base font-medium px-12 md:py-6 py-[18px] md:gap-4 gap-3;
+}
