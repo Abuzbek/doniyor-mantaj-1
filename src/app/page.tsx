@@ -10,7 +10,7 @@ export default function Home() {
           className="max-w-full h-auto object-contain w-[60%] md:block hidden relative z-10"
         />
       </div>
-      <div className="max-w-[1132px] mx-auto grid lg:grid-cols-12 lg:gap-x-6 sm:gap-y-[54px] xs:gap-y-5 gap-y-2 relative z-10 2xl:content-between h-full lg:px-0 px-4">
+      <div className="max-w-[1132px] mx-auto grid lg:grid-cols-12 lg:gap-x-6 sm:gap-y-[54px] xs:gap-y-5 gap-y-4 relative z-10 2xl:content-between h-full lg:px-0 px-4">
         <div className="flex items-center sm:justify-between justify-center flex-wrap xs:text-start text-center gap-4 lg:col-span-7">
           <h3>3 kunlik bepul darslar</h3>
           <div className={style.starting_date}>
@@ -21,8 +21,8 @@ export default function Home() {
             <span>10-11-12 iyul</span> <span>|</span> <span>Online</span>
           </div>
         </div>
-        <div className="flex flex-col md:items-start items-center sm:text-start text-center xs:gap-10 gap-2 md:col-span-12">
-          <div className="flex flex-col xs:gap-7 gap-2 md:max-w-[600px]">
+        <div className="flex flex-col md:items-start items-center sm:text-start text-center xs:gap-10 gap-4 md:col-span-12">
+          <div className="flex flex-col xs:gap-7 gap-4 md:max-w-[600px]">
             <div className="flex flex-col gap-[14px]">
               <p className="xs:block hidden text-lg text-opacity-80 text-white uppercase font-medium">
                 Doniyor Abduganiyev
@@ -45,11 +45,11 @@ export default function Home() {
                 Ro‘yxatdan o‘tish
               </a>
             </div>
-            <div className="flex flex-col xs:gap-5 gap-2 md:max-w-lg max-w-full">
+            <div className="flex flex-col xs:gap-5 gap-4 md:max-w-lg max-w-full">
               <h4 className="text-lg text-white uppercase font-semibold">
                 Bepul darslarda:
               </h4>
-              <ul className="grid md:grid-cols-2 xs:gap-y-[19px] gap-y-3 md:gap-x-3 text-white">
+              <ul className="grid md:grid-cols-2 xs:gap-y-[19px] gap-y-4 md:gap-x-3 text-white">
                 <li className="!text-start md:col-span-2 flex items-center gap-3 font-medium xs:text-base text-sm">
                   <i className={style.indicator} /> Yuqori daromad qiluvchi
                   mobilografiya kasbi haqida
