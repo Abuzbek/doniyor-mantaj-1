@@ -22,9 +22,6 @@ export default function RootLayout({
         <Script
           id="google-analytics"
           src="/js/ga.js"
-          onLoad={() => {
-            console.log("Script has loaded");
-          }}
         />
         <Script src="/js/pixel.js" id="facebook-pixel" />
         <noscript>
