@@ -74,7 +74,7 @@ export default function Home() {
   return (
     <div className={style.main}>
       <Head>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-E0VCR72V8Q" />
+        <Script  src="https://www.googletagmanager.com/gtag/js?id=G-E0VCR72V8Q" />
         <Script id="google-analytics">
           {`
           window.dataLayer = window.dataLayer || [];
@@ -100,7 +100,7 @@ export default function Home() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
             </span>
-            <span>10-11-12 iyul</span> <span>|</span> <span>Online</span>
+            <span>10-11-12 Noyabr</span> <span>|</span> <span>Online</span>
           </div>
         </div>
         <div className="flex flex-col md:items-start items-center sm:text-start text-center xs:gap-10 gap-4 md:col-span-12">
