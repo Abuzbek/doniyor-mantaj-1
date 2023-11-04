@@ -15,6 +15,28 @@ export default function Congratulations() {
           gtag('config', 'G-E0VCR72V8Q');
         `}
         </Script>
+        <Script>
+          {`
+          !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1666039500550477');
+            fbq('track', 'PageView');
+          `}
+        </Script>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=1666039500550477&ev=PageView&noscript=1"
+          />
+        </noscript>
       </Head>
       <div className="content max-w-2xl mx-auto flex items-center flex-col md:gap-10 gap-6 w-full">
         <img
