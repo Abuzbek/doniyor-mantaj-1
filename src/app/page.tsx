@@ -10,8 +10,8 @@ export default function Home() {
           className="max-w-full h-auto object-contain w-[60%] md:block hidden"
         />
       </div>
-      <div className="max-w-[1132px] mx-auto grid lg:grid-cols-12 lg:gap-x-6 xs:gap-y-[54px] gap-y-2 relative z-10 2xl:content-between h-full lg:px-0 px-4">
-        <div className="flex items-center sm:justify-between justify-center flex-wrap gap-4 lg:col-span-7">
+      <div className="max-w-[1132px] mx-auto grid lg:grid-cols-12 lg:gap-x-6 sm:gap-y-[54px] xs:gap-y-5 gap-y-2 relative z-10 2xl:content-between h-full lg:px-0 px-4">
+        <div className="flex items-center sm:justify-between justify-center flex-wrap xs:text-start text-center gap-4 lg:col-span-7">
           <h3>3 kunlik bepul darslar</h3>
           <div className={style.starting_date}>
             <span className="relative flex h-3 w-3">
@@ -35,7 +35,7 @@ export default function Home() {
               <img
                 src="/images/doniyor.png"
                 alt="Doniyor Abduganiyev"
-                className="max-w-full h-auto object-contain md:hidden block"
+                className="max-w-full h-auto w-[80%] mx-auto object-contain md:hidden block"
               />
               <a
                 className={`md:hidden block ` + style.button}
@@ -45,36 +45,36 @@ export default function Home() {
                 Ro‘yxatdan o‘tish
               </a>
             </div>
-            <div className="flex flex-col gap-5 md:max-w-lg max-w-full">
+            <div className="flex flex-col xs:gap-5 gap-2 md:max-w-lg max-w-full">
               <h4 className="text-lg text-white uppercase font-semibold">
                 Bepul darslarda:
               </h4>
-              <ul className="grid md:grid-cols-2 gap-y-[19px] md:gap-x-3 text-white">
-                <li className="!text-start md:col-span-2 flex items-center gap-3 font-medium">
+              <ul className="grid md:grid-cols-2 xs:gap-y-[19px] gap-y-3 md:gap-x-3 text-white">
+                <li className="!text-start md:col-span-2 flex items-center gap-3 font-medium xs:text-base text-sm">
                   <i className={style.indicator} /> Yuqori daromad qiluvchi
                   mobilografiya kasbi haqida
                 </li>
-                <li className="!text-start flex items-center gap-3 font-medium">
+                <li className="!text-start flex items-center gap-3 font-medium xs:text-base text-sm">
                   <i className={style.indicator} /> Yangi sohani boshlashda
                   qo'rquvingizni yengish
                 </li>
-                <li className="!text-start flex items-center gap-3 font-medium">
+                <li className="!text-start flex items-center gap-3 font-medium xs:text-base text-sm">
                   <i className={style.indicator} /> Mijoz topish va u bilan
                   kelishuvga erishish
                 </li>
-                <li className="!text-start flex items-center gap-3 font-medium">
+                <li className="!text-start flex items-center gap-3 font-medium xs:text-base text-sm">
                   <i className={style.indicator} /> Qisqa vaqtda oyiga 1000$
                   daromadga chiqish
                 </li>
-                <li className="!text-start flex items-center gap-3 font-medium">
+                <li className="!text-start flex items-center gap-3 font-medium xs:text-base text-sm">
                   <i className={style.indicator} /> Erkin grafikda masofadan
                   ishlash
                 </li>
-                <li className="!text-start flex items-center gap-3 font-medium">
+                <li className="!text-start flex items-center gap-3 font-medium xs:text-base text-sm">
                   <i className={style.indicator} /> Videolar orqali mashxurlikka
                   erishish
                 </li>
-                <li className="!text-start flex items-center gap-3 font-medium">
+                <li className="!text-start flex items-center gap-3 font-medium xs:text-base text-sm">
                   <i className={style.indicator} /> Mobilografiya sohasida eng
                   zo‘ri bo'lish sirlari haqida gaplashamiz
                 </li>

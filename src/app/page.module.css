@@ -9,16 +9,16 @@
 }
 .main h3 {
   color: #e59aff;
-  font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   letter-spacing: 0.72px;
   text-transform: uppercase;
+  @apply xs:text-2xl text-lg;
 }
 .main .starting_date {
-  height: 46px;
-  @apply flex gap-2 items-center border-[1.5px] border-white px-5 py-3 rounded-xl;
+  
+  @apply flex gap-2 items-center border-[1.5px] border-white px-5 py-3 rounded-xl xs:h-[46px] h-10;
 }
 .main .starting_date span {
   color: #fff;
@@ -27,6 +27,7 @@
   font-weight: 600;
   line-height: normal;
   letter-spacing: 0.54px;
+  @apply xs:text-lg text-base;
 }
 .main .indicator {
   background: linear-gradient(84deg, #6950ff 0%, #6950ff 0.01%, #c631fb 100%),
@@ -44,7 +45,7 @@
   font-weight: 500;
   line-height: normal;
 
-  @apply px-[60px] py-6 md:w-auto w-full text-center;
+  @apply px-[60px] sm:py-6 py-[18px] md:w-auto w-full text-center;
 }
 
 @media (min-aspect-ratio: 2.4/1) {
