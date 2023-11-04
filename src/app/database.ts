@@ -1,5 +1,5 @@
 import { firebaseDatabase } from "../../initFirebase";
-import { onValue, ref, set } from "firebase/database";
+import { onValue, ref, set, get, child } from "firebase/database";
 
 function generateUUID() {
   // Public Domain/MIT
@@ -42,9 +42,7 @@ export async function writeUserData({
 
 export async function getUserData() {
   const db = firebaseDatabase;
-  const starCountRef = ref(db, "users/");
-  onValue(starCountRef, (snapshot) => {
-    const data = snapshot.val();
-    
-  });
+  const starCountRef = ref(db);
+  console.log(starCountRef);
+  return await get(child(starCountRef, "users/"));
 }

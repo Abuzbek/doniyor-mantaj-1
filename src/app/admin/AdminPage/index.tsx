@@ -6,14 +6,14 @@ type Props = {
 
 const AdminPage = ({ users }: Props) => {
   return (
-    <div>
+    <div className="p-6 flex flex-col gap-6">
       <h3>Ro'yxatga olinganlar</h3>
       <table className="min-w-full table-auto text-sm xl:text-base">
         <thead>
           <tr className="bg-white border-b border-gray-300 text-gray-400">
             <th className="w-20 py-4">T/r</th>
             <th className="text-left py-4 pl-3">F.I.Sh</th>
-            <th className="py-4 pl-3 cursor-pointer">Telefon raqam</th>
+            <th className="py-4 pl-3 text-left">Telefon raqam</th>
           </tr>
         </thead>
         <tbody>

@@ -1,6 +1,13 @@
 "use client";
 import { redirect } from "next/navigation";
-import React, { FC, FormEvent, useEffect, useState } from "react";
+import React, {
+  FC,
+  FormEvent,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { getUserData } from "../database";
 import { firebaseAuth } from "../../../initFirebase";
 import { User, signInWithEmailAndPassword } from "firebase/auth";
@@ -16,7 +23,7 @@ type Props = {};
 const Admin: FC<Props> = () => {
   const [login, setLogin] = useState(false);
   const [user, setUser] = useState<User>();
-  const [data, setData] = useState<{name: string, phone: string}[]>([]);
+  const [data, setData] = useState<{ name: string; phone: string }[]>([]);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const auth = firebaseAuth;
@@ -36,9 +43,20 @@ const Admin: FC<Props> = () => {
         const errorMessage = error.message;
       });
   };
-    useEffect(() => {
-      const data = getUserData()
-    }, []);
+  const getData = useCallback(async () => {
+    getUserData().then((snapshot) => {
+      if (snapshot.exists()) {
+        setData(
+          Object.entries<{ name: string; phone: string }>(snapshot.val()).map(
+            ([key, val]) => val
+          )
+        );
+      }
+    });
+  }, []);
+  useEffect(() => {
+    getData();
+  }, []);
   return !login ? (
     <LoginForm
       email={email}
@@ -48,7 +66,7 @@ const Admin: FC<Props> = () => {
       submit={submit}
     />
   ) : (
-    <AdminPage users={data} />
+    data.length && <AdminPage users={data} />
   );
 };
 
