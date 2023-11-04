@@ -74,8 +74,13 @@ export default function Home() {
   return (
     <div className={style.main}>
       <Head>
-        <Script  src="https://www.googletagmanager.com/gtag/js?id=G-E0VCR72V8Q" />
-        <Script id="google-analytics">
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-E0VCR72V8Q" />
+        <Script
+          id="google-analytics"
+          onLoad={() => {
+            console.log("Script has loaded");
+          }}
+        >
           {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -84,6 +89,28 @@ export default function Home() {
           gtag('config', 'G-E0VCR72V8Q');
         `}
         </Script>
+        <Script>
+          {`
+          !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1666039500550477');
+            fbq('track', 'PageView');
+          `}
+        </Script>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=1666039500550477&ev=PageView&noscript=1"
+          />
+        </noscript>
       </Head>
       <div className="2xl:max-w-[1532px] max-w-7xl m-auto flex justify-end items-end z-0 absolute w-full h-full top-0 left-1/2 transform -translate-x-1/2">
         <img
