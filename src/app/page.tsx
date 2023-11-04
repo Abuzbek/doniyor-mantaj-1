@@ -99,7 +99,7 @@ export default function Home() {
                 Telefon orqali <br /> 1000$ daromad topish
               </h1>
             </div>
-            <div className="relative">
+            <div className="relative md:hidden block">
               <img
                 src="/images/doniyor.png"
                 alt="Doniyor Abduganiyev"

@@ -1,13 +1,6 @@
 "use client";
-import { redirect } from "next/navigation";
-import React, {
-  FC,
-  FormEvent,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { useSearchParams } from "next/navigation";
+import React, { FC, FormEvent, useCallback, useEffect, useState } from "react";
 import { getUserData } from "../database";
 import { firebaseAuth } from "../../../initFirebase";
 import { User, signInWithEmailAndPassword } from "firebase/auth";
@@ -21,14 +14,15 @@ type Props = {};
 // };
 
 const Admin: FC<Props> = () => {
+  const query = useSearchParams();
   const [login, setLogin] = useState(false);
   const [user, setUser] = useState<User>();
   const [data, setData] = useState<{ name: string; phone: string }[]>([]);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const auth = firebaseAuth;
-  const submit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const submit = (e?: FormEvent<HTMLFormElement>) => {
+    e?.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
