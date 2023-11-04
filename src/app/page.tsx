@@ -13,6 +13,8 @@ import { writeUserData } from "./database";
 import { useRouter } from "next/navigation";
 import Script from "next/script";
 import Head from "next/head";
+import PhoneInput from "react-phone-number-input";
+
 function useRegex(input: string) {
   let regex = /\+\d{3} \(\d{2}\) \d{3}-\d{2}-\d{2}/i;
   return regex.test(input);
@@ -25,13 +27,13 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-  const onChangeInputMask = (value: string) => {
-    if (!value.includes("998")) {
-      setData((_data) => ({ ..._data, phone: "998" }));
-    } else {
-      setData((_data) => ({ ..._data, phone: value }));
-    }
-  };
+  // const onChangeInputMask = (value: string) => {
+  //   if (!value.includes("998")) {
+  //     setData((_data) => ({ ..._data, phone: "998" }));
+  //   } else {
+  //     setData((_data) => ({ ..._data, phone: value }));
+  //   }
+  // };
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (data.phone && data.name) {
@@ -73,7 +75,6 @@ export default function Home() {
   // }, []);
   return (
     <div className={style.main}>
-      
       <div className="2xl:max-w-[1532px] max-w-7xl m-auto flex justify-end items-end z-0 absolute w-full h-full top-0 left-1/2 transform -translate-x-1/2">
         <img
           src="/images/doniyor.png"
@@ -190,13 +191,13 @@ export default function Home() {
               <small className="text-red-500">{error.name}</small>
             </div>
             <div className="form_control">
-              <InputMask
-                className="py-3 px-4 rounded-xl bg-[#eaeaea] text-[#232323] w-full"
-                mask="+999 (99) 999-99-99"
+              <PhoneInput
+                international
+                defaultCountry="UZ"
                 value={data.phone}
-                type="text"
-                onChange={(e) => onChangeInputMask(e.target.value)}
-                placeholder="+998 (__) ___-__-__"
+                onChange={(e: any) =>
+                  setData((_data) => ({ ..._data, phone: e }))
+                }
               />
               <small className="text-red-500">{error.phone}</small>
             </div>
