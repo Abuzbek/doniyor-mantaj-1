@@ -1,10 +1,5 @@
 "use client";
-import {
-  FormEvent,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import Modal, { IModalMethods } from "./components/Modal";
 import style from "./page.module.css";
 import "./page.css";
@@ -12,7 +7,7 @@ import { writeUserData } from "./database";
 import { useRouter } from "next/navigation";
 import PhoneInput from "react-phone-number-input";
 import Indicator from "./components/Indicator";
-import TagManager from 'react-gtm-module';
+import TagManager from "react-gtm-module";
 
 const measurementId = "G-70Z5SVCHSP";
 
@@ -113,7 +108,7 @@ export default function Home() {
                 Ro‘yxatdan o‘tish
               </button>
             </div>
-            <div className="flex flex-col xs:gap-5 gap-4 md:max-w-lg max-w-full">
+            <div className="flex flex-col xs:gap-5 gap-4 md:max-w-lg max-w-full md:p-0 p-5 md:bg-transparent bg-[#430D69] md:rounded-none rounded-2xl">
               <h4 className="text-lg text-white uppercase font-semibold">
                 Bepul darslarda:
               </h4>
@@ -147,6 +142,16 @@ export default function Home() {
                   va mashxurlikka erishish sirlari
                 </li>
               </ul>
+              <h4 className="text-center md:hidden block text-[#E59AFF] text-[28px] font-semibold">
+                BEPUL
+              </h4>
+              <button
+                onClick={() => modalRef.current?.openModal()}
+                className={`md:hidden block ` + style.button}
+                role="button"
+              >
+                Ro‘yxatdan o‘tish
+              </button>
             </div>
           </div>
           <div className="flex items-center">
