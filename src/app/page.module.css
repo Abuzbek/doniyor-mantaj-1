@@ -42,11 +42,9 @@
   letter-spacing: 0.54px;
   @apply xs:text-lg text-base;
 }
-.main .indicator {
-  background: linear-gradient(84deg, #6950ff 0%, #6950ff 0.01%, #c631fb 100%),
-    #d9d9d9;
-  @apply min-w-[16px] h-4 rounded-full;
-}
+/* .main .indicator {
+  @apply ;
+} */
 
 .main .button {
   border-radius: 20px;

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 import Script from "next/script";
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -10,7 +9,7 @@ export const metadata: Metadata = {
   description: "Doniyor Abduganiyev Telefon orqali 1000$ daromad topish",
 };
 
-const measurementId = "G-70Z5SVCHSP";
+export const measurementId = "G-70Z5SVCHSP";
 export default function RootLayout({
   children,
 }: {
@@ -20,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <head></head>
       <body className={inter.className}>
-        <Script
+        {/* <Script
           strategy="afterInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
         />
@@ -37,7 +36,7 @@ export default function RootLayout({
                       });
                     `,
           }}
-        />
+        /> */}
         <Script strategy="afterInteractive" id="facebook-pixel">
           {`!function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -51,14 +50,12 @@ export default function RootLayout({
             fbq('track', 'PageView');
               `}
         </Script>
-        <noscript>
-          <img
+        <noscript dangerouslySetInnerHTML={{__html: `<img
             height="1"
             width="1"
             style={{display: 'none'}}
             src="https://www.facebook.com/tr?id=1226357271369927&ev=PageView&noscript=1"
-          />
-        </noscript>
+          />`}} />
         {children}
       </body>
     </html>

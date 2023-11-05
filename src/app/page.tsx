@@ -1,7 +1,6 @@
 "use client";
 import {
   FormEvent,
-  FormEventHandler,
   useEffect,
   useRef,
   useState,
@@ -12,11 +11,13 @@ import "./page.css";
 import { writeUserData } from "./database";
 import { useRouter } from "next/navigation";
 import PhoneInput from "react-phone-number-input";
-
+import Indicator from "./components/Indicator";
+import TagManager from 'react-gtm-module';
 function useRegex(input: string) {
   let regex = /\+\d{3} \(\d{2}\) \d{3}-\d{2}-\d{2}/i;
   return regex.test(input);
 }
+export const measurementId = "G-70Z5SVCHSP";
 
 export default function Home() {
   const modalRef = useRef<IModalMethods>();
@@ -68,9 +69,9 @@ export default function Home() {
       });
     }
   };
-  // useEffect(() => {
-  //   modalRef.current?.openModal();
-  // }, []);
+  useEffect(() => {
+    TagManager.initialize({ gtmId: measurementId });
+  }, []);
   return (
     <div className={style.main}>
       <div className="2xl:max-w-[1532px] max-w-7xl m-auto flex justify-end items-end z-0 absolute w-full h-full top-0 left-1/2 transform -translate-x-1/2">
@@ -119,34 +120,34 @@ export default function Home() {
               <h4 className="text-lg text-white uppercase font-semibold">
                 Bepul darslarda:
               </h4>
-              <ul className="grid md:grid-cols-2 xs:gap-y-[19px] gap-y-4 md:gap-x-3 text-white">
+              <ul className="flex flex-col gap-5 text-white">
                 <li className="!text-start md:col-span-2 flex items-center gap-3 font-medium xs:text-base text-sm">
-                  <i className={style.indicator} /> Yuqori daromad qiluvchi
-                  mobilografiya kasbi haqida
+                  <i className={style.indicator}>
+                    <Indicator />
+                  </i>
+                  Qanday qilib yangi mobilografiya kasbida yuqori daromad topish
+                  mumkin?
                 </li>
-                <li className="!text-start flex items-center gap-3 font-medium xs:text-base text-sm">
-                  <i className={style.indicator} /> Yangi sohani boshlashda
-                  qo'rquvingizni yengish
+                <li className="!text-start md:col-span-2 flex items-center gap-3 font-medium xs:text-base text-sm">
+                  <i className={style.indicator}>
+                    <Indicator />
+                  </i>
+                  Qisqa vaqtda oyiga 1000$ daromadga chiqish uchun qadamma-qadam
+                  tayyor reja
                 </li>
-                <li className="!text-start flex items-center gap-3 font-medium xs:text-base text-sm">
-                  <i className={style.indicator} /> Mijoz topish va u bilan
-                  kelishuvga erishish
+                <li className="!text-start md:col-span-2 flex items-center gap-3 font-medium xs:text-base text-sm">
+                  <i className={style.indicator}>
+                    <Indicator />
+                  </i>
+                  Birinchi mijozni topishni eng oson usuli va kelishuvga
+                  erishishning aniq ketma-ketligi
                 </li>
-                <li className="!text-start flex items-center gap-3 font-medium xs:text-base text-sm">
-                  <i className={style.indicator} /> Qisqa vaqtda oyiga 1000$
-                  daromadga chiqish
-                </li>
-                <li className="!text-start flex items-center gap-3 font-medium xs:text-base text-sm">
-                  <i className={style.indicator} /> Erkin grafikda masofadan
-                  ishlash
-                </li>
-                <li className="!text-start flex items-center gap-3 font-medium xs:text-base text-sm">
-                  <i className={style.indicator} /> Videolar orqali mashxurlikka
-                  erishish
-                </li>
-                <li className="!text-start flex items-center gap-3 font-medium xs:text-base text-sm">
-                  <i className={style.indicator} /> Mobilografiya sohasida eng
-                  zo‘ri bo'lish sirlari haqida gaplashamiz
+                <li className="!text-start md:col-span-2 flex items-center gap-3 font-medium xs:text-base text-sm">
+                  <i className={style.indicator}>
+                    <Indicator />
+                  </i>
+                  Qanday qilib instagramda topga chiqadigan videolar tayyorlash
+                  va mashxurlikka erishish sirlari
                 </li>
               </ul>
             </div>
