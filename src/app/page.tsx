@@ -14,7 +14,7 @@ import PhoneInput from "react-phone-number-input";
 import Indicator from "./components/Indicator";
 import TagManager from 'react-gtm-module';
 
-const measurementId = "G-MGSKPK7RP8";
+const measurementId = "G-MGSKPK7RP8"
 
 export default function Home() {
   const modalRef = useRef<IModalMethods>();
