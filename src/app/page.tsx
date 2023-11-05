@@ -17,7 +17,7 @@ function useRegex(input: string) {
   let regex = /\+\d{3} \(\d{2}\) \d{3}-\d{2}-\d{2}/i;
   return regex.test(input);
 }
-export const measurementId = "G-70Z5SVCHSP";
+const measurementId = "G-70Z5SVCHSP";
 
 export default function Home() {
   const modalRef = useRef<IModalMethods>();

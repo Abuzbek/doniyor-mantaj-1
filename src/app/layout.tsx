@@ -19,24 +19,6 @@ export default function RootLayout({
     <html lang="en">
       <head></head>
       <body className={inter.className}>
-        {/* <Script
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
-        />
-        <Script
-          id="gtag-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-                      window.dataLayer = window.dataLayer || [];
-                      function gtag(){dataLayer.push(arguments);}
-                      gtag('js', new Date());
-                      gtag('config', '${measurementId}', {
-                      page_path: window.location.pathname,
-                      });
-                    `,
-          }}
-        /> */}
         <Script strategy="afterInteractive" id="facebook-pixel">
           {`!function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
