@@ -18,7 +18,7 @@ export default function Congratulations() {
             Oxirgi qadam qoldi!
           </h1>
           <p className="max-w-lg md:text-xl text-lg font-medium leading-[140%]">
-            Bepul darslarda ishtirok etish uchun ushbu telegram guruhiga
+            Bepul darslarda ishtirok etish uchun ushbu telegram kanalga
             qo'shiling
           </p>
         </div>
@@ -30,7 +30,7 @@ export default function Congratulations() {
             target="_blank"
           >
             <img src="/images/telegram.svg" alt="Telegram" />
-            Telegram guruhga o‘tish
+            Telegram kanalga o‘tish
           </a>
         </div>
       </div>

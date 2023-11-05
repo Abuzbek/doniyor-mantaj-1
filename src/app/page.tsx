@@ -169,11 +169,15 @@ export default function Home() {
             <h3 className="text-[#222] md:text-[32px] text-xl font-bold leading-[130%]">
               Bepul darslarga ro‘xatdan o‘tish
             </h3>
-            <button className="text-3xl" onClick={()=>modalRef.current?.closeModal()}>&times;</button>
+            <button
+              className="text-3xl"
+              onClick={() => modalRef.current?.closeModal()}
+            >
+              &times;
+            </button>
           </div>
           <p className="text-[#222] md:text-lg font-medium leading-[130%]">
-            Online darslarda ishtirok etish uchun ism va telefon raqamingizni
-            qoldiring
+            Davom etish uchun quyidagi formani to'ldiring
           </p>
           <div className="form_group grid md:grid-cols-2 gap-4">
             <div className="form_control">
@@ -203,7 +207,7 @@ export default function Home() {
           </div>
           <div className="submit_button">
             <button className={style.submit_button} role="button" type="submit">
-              Telegram guruhga o‘tish
+              Davom etish
             </button>
           </div>
         </form>
