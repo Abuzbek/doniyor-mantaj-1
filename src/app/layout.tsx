@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   description: "Doniyor Abduganiyev Telefon orqali 1000$ daromad topish",
 };
 
-export const measurementId = "G-70Z5SVCHSP";
 export default function RootLayout({
   children,
 }: {
