@@ -91,7 +91,7 @@ export default function Home() {
                 Doniyor Abduganiyev
               </p>
               <h1 className="xs:text-[42px] text-[32px] font-bold leading-[120%] tracking-[1.68px] text-white uppercase">
-                Telefon orqali <br /> 1000$ daromad topish
+              Qanday qilib telefon <br className="md:block hidden" /> orqali 1000$ daromad <br className="md:block hidden" /> topish mumkin
               </h1>
             </div>
             <div className="relative md:hidden block">
@@ -124,7 +124,8 @@ export default function Home() {
                   <i className={style.indicator}>
                     <Indicator />
                   </i>
-                  Qanday qilib telefon orqali 1000$ daromad topish mumkin
+                    Qisqa vaqtda oyiga 1000$ daromadga chiqish uchun qadamma-qadam
+                    tayyor reja
                 </li>
                 <li className="!text-start md:col-span-2 flex items-center gap-3 font-medium xs:text-base text-sm">
                   <i className={style.indicator}>
