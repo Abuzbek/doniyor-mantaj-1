@@ -124,8 +124,7 @@ export default function Home() {
                   <i className={style.indicator}>
                     <Indicator />
                   </i>
-                  Qisqa vaqtda oyiga 1000$ daromadga chiqish uchun qadamma-qadam
-                  tayyor reja
+                  Qanday qilib telefon orqali 1000$ daromad topish mumkin
                 </li>
                 <li className="!text-start md:col-span-2 flex items-center gap-3 font-medium xs:text-base text-sm">
                   <i className={style.indicator}>
