@@ -1,10 +1,5 @@
 .main {
-  background: linear-gradient(
-    74deg,
-    #1a0331 -0.6%,
-    #2f0743 50.38%,
-    #4b044c 101.36%
-  );
+  background: #0A0A0A;
   @apply w-screen h-screen relative text-white flex items-center;
 }
 

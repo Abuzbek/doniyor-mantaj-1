@@ -108,7 +108,7 @@ export default function Home() {
                 Ro‘yxatdan o‘tish
               </button>
             </div>
-            <div className="flex flex-col xs:gap-5 gap-4 md:max-w-lg max-w-full md:p-0 p-5 md:bg-transparent bg-[#430D69] md:rounded-none rounded-2xl">
+            <div className="flex flex-col xs:gap-5 gap-4 md:max-w-lg max-w-full md:p-0 p-5 md:bg-transparent bg-[#1F1F1F] md:rounded-none rounded-2xl">
               <h4 className="text-lg text-white uppercase font-semibold">
                 Bepul darslarda:
               </h4>
