@@ -1,10 +1,5 @@
 .main {
-  background: linear-gradient(
-    74deg,
-    #1a0331 -0.6%,
-    #2f0743 50.38%,
-    #4b044c 101.36%
-  );
+  background: #0A0A0A;
   @apply w-screen md:h-screen h-auto sm:pt-10 pt-5 relative sm:pb-0 pb-5;
 }
 .main .radial_gradient {
@@ -71,6 +66,9 @@
 @media (min-aspect-ratio: 2.4/1) {
   .main img {
     width: 50% !important;
+  }
+  .main h1 {
+    font-size: 28px !important;
   }
 }
 .main .form_control input {

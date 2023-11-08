@@ -68,7 +68,7 @@ export default function Home() {
     <div className={style.main}>
       <div className="2xl:max-w-[1532px] max-w-7xl m-auto flex justify-end items-end z-0 absolute w-full h-full top-0 left-1/2 transform -translate-x-1/2">
         <img
-          src="/images/doniyor.png"
+          src="/images/doniyor.webp"
           alt="Doniyor Abduganiyev"
           className="max-w-full h-auto object-contain w-[60%] md:block hidden relative z-10"
         />
@@ -96,7 +96,7 @@ export default function Home() {
             </div>
             <div className="relative md:hidden block">
               <img
-                src="/images/doniyor.png"
+                src="/images/doniyor.webp"
                 alt="Doniyor Abduganiyev"
                 className="max-w-full h-auto w-[90%] mx-auto object-contain md:hidden block"
               />
