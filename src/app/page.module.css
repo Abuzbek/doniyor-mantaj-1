@@ -1,5 +1,5 @@
 .main {
-  background: #0A0A0A;
+  background: #0a0a0a;
   @apply w-screen md:h-screen h-auto sm:pt-10 pt-5 relative sm:pb-0 pb-5;
 }
 .main .radial_gradient {
@@ -63,14 +63,17 @@
   @apply px-[40px] py-5 md:w-auto w-full text-center;
 }
 .submit_mobile {
-  box-shadow: 0px 4px 16px 0px rgba(198, 49, 251, 0.30) !important;
+  box-shadow: 0px 4px 16px 0px rgba(198, 49, 251, 0.3) !important;
 }
 @media (min-aspect-ratio: 2.4/1) {
   .main img {
     width: 50% !important;
   }
+  .sm\:gap-y-\[54px\] {
+    row-gap: 24px !important;
+  }
   .main h1 {
-    font-size: 28px !important;
+    font-size: 38px !important;
   }
 }
 .main .form_control input {

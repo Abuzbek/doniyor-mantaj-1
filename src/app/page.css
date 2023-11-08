@@ -52,3 +52,9 @@
   appearance: none;
   background: transparent;
 }
+
+@media (min-aspect-ratio: 2.4/1) {
+  .sm\:gap-y-\[54px\] {
+    row-gap: 24px !important;
+  }
+}
