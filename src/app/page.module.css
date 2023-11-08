@@ -69,8 +69,11 @@
   .main img {
     width: 50% !important;
   }
-  .sm\:gap-y-\[54px\] {
-    row-gap: 24px !important;
+  
+}
+@media (min-aspect-ratio: 2.4/1) {
+  .main img {
+    width: 50% !important;
   }
   .main h1 {
     font-size: 38px !important;
