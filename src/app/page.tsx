@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import PhoneInput from "react-phone-number-input";
 import Indicator from "./components/Indicator";
 import TagManager from "react-gtm-module";
+import classNames from "classnames";
 
 const measurementId = "G-70Z5SVCHSP";
 
@@ -81,7 +82,7 @@ export default function Home() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
             </span>
-            <span>10-11-12 Noyabr</span> <span>|</span> <span>Online</span>
+            <span>15-16-17 fevral</span> <span>|</span> <span>Online</span>
           </div>
         </div>
         <div className="flex flex-col md:items-start items-center sm:text-start text-center xs:gap-10 gap-4 md:col-span-12">
@@ -120,29 +121,28 @@ export default function Home() {
                   <i className={style.indicator}>
                     <Indicator />
                   </i>
-                  Qanday qilib yangi mobilografiya kasbida yuqori daromad topish
-                  mumkin?
+                  Qanday qilib birgina telefon orqali 1000$ daromad topish
                 </li>
                 <li className="!text-start md:col-span-2 flex items-center gap-3 font-medium xs:text-base text-sm">
                   <i className={style.indicator}>
                     <Indicator />
                   </i>
-                  Qisqa vaqtda oyiga 1000$ daromadga chiqish uchun qadamma-qadam
-                  tayyor reja
+                  Qanday qilib shaxsiy brendni to’g’ri qurish va mashxurlikka erishish yo’llari
                 </li>
                 <li className="!text-start md:col-span-2 flex items-center gap-3 font-medium xs:text-base text-sm">
                   <i className={style.indicator}>
                     <Indicator />
                   </i>
-                  Birinchi mijozni topishni eng oson usuli va kelishuvga
-                  erishishning aniq ketma-ketligi
+                  Videolar orqali daromadni bir necha karraga oshirish
                 </li>
                 <li className="!text-start md:col-span-2 flex items-center gap-3 font-medium xs:text-base text-sm">
                   <i className={style.indicator}>
                     <Indicator />
                   </i>
-                  Qanday qilib instagramda topga chiqadigan videolar tayyorlash
-                  va mashxurlikka erishish sirlari
+                  2024-yilda trenddagi kasb tanlash
+                </li>
+                <li className="!text-start md:col-span-2 flex items-center gap-3 font-medium xs:text-base text-sm">
+                Sirlarini ko’rib chiqamiz
                 </li>
               </ul>
               <h4 className="text-center md:hidden block text-[#E59AFF] text-[28px] font-semibold">
@@ -157,9 +157,16 @@ export default function Home() {
               >
                 Ro‘yxatdan o‘tish
               </button>
+              <div className="bg-[#38375F] p-3 rounded-2xl md:hidden flex flex-col items-center gap-3">
+                <img src="/images/gift.png" alt="" className={classNames('!w-[42px]', style.gift)} />
+                <div className="flex flex-col gap-1">
+                  <p className="text-sm leading-[1.0625rem] font-medium text-white">Ro‘yxatdan o‘tganlarga bonus qo‘llanma</p>
+                  <p className="text-sm leading-[1.0625rem] font-medium text-[#E59AFF]">“Telefon orqali 1000$ daromad topish”</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="flex items-center">
+          <div className="flex flex-col items-start gap-6">
             <button
               onClick={() => modalRef.current?.openModal()}
               className={`md:block hidden ` + style.button}
@@ -167,6 +174,13 @@ export default function Home() {
             >
               Ro‘yxatdan o‘tish
             </button>
+            <div className="bg-[#38375F] py-[10px] px-[8px] rounded-2xl md:flex hidden  items-center gap-3">
+                <img src="/images/gift.png" className={classNames('!w-[42px]', style.gift)} alt="" />
+                <div className="flex flex-col gap-1.5">
+                  <p className="text-sm leading-[1.0625rem] font-medium text-white">Ro‘yxatdan o‘tganlarga bonus qo‘llanma</p>
+                  <p className="text-sm leading-[1.0625rem] font-medium text-[#E59AFF]">“Telefon orqali 1000$ daromad topish”</p>
+                </div>
+              </div>
           </div>
         </div>
         <div></div>

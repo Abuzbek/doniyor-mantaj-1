@@ -66,13 +66,13 @@
   box-shadow: 0px 4px 16px 0px rgba(198, 49, 251, 0.3) !important;
 }
 @media (min-aspect-ratio: 2.4/1) {
-  .main img {
+  .main img:not(.gift) {
     width: 50% !important;
   }
   
 }
 @media (min-aspect-ratio: 2.4/1) {
-  .main img {
+  .main img:not(.gift) {
     width: 50% !important;
   }
   .main h1 {
