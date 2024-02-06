@@ -85,8 +85,8 @@ export default function Home() {
             <span>15-16-17 fevral</span> <span>|</span> <span>Online</span>
           </div>
         </div>
-        <div className="flex flex-col md:items-start items-center sm:text-start text-center xs:gap-10 gap-4 md:col-span-12">
-          <div className="flex flex-col xs:gap-7 gap-4 md:max-w-[600px]">
+        <div className="flex flex-col md:items-start items-center sm:text-start text-center xs:gap-6 gap-4 md:col-span-12">
+          <div className="flex flex-col gap-4 md:max-w-[600px]">
             <div className="flex flex-col gap-[14px]">
               <p className="xs:block hidden text-lg text-opacity-80 text-white uppercase font-medium">
                 Doniyor Abduganiyev
