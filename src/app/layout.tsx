@@ -6,7 +6,7 @@ const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "DoniyorFX",
-  description: "Doniyor Abduganiyev Qanday qilib telefon orqali 1000$ daromad topish mumkin",
+  description: "Doniyor Abduganiyev Qanday qilib telefon orqali daromad topish mumkin",
 };
 
 export default function RootLayout({
