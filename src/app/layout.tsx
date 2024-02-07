@@ -5,7 +5,7 @@ import Script from "next/script";
 const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Qanday qilib telefon orqali 1000$ daromad topish mumkin",
+  title: "DoniyorFX",
   description: "Doniyor Abduganiyev Qanday qilib telefon orqali 1000$ daromad topish mumkin",
 };
 
