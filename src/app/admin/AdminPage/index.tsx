@@ -6,7 +6,7 @@ type Props = {
 
 const AdminPage = ({ users }: Props) => {
   return (
-    <div className="p-6 flex flex-col gap-6">
+    <div className="p-6 flex flex-col gap-6 bg-white">
       <h3>Ro'yxatga olinganlar</h3>
       <table className="min-w-full table-auto text-sm xl:text-base">
         <thead>
