@@ -20,7 +20,7 @@ const AdminPage = ({ users }: Props) => {
           {users.map((n, i: number) => (
             <tr
               key={i}
-              className="text-gray-800 odd:bg-white even:bg-grayPrimary !hover:bg-gray-200"
+              className="text-gray-800 odd:bg-white even:bg-gray-50 !hover:bg-gray-200"
             >
               <td className="w-20 py-4">
                 <div className="text-center">{i + 1}</div>
