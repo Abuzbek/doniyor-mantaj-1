@@ -26,7 +26,7 @@ export default function Congratulations() {
           <a
             className={style.button}
             role="button"
-            href="https://t.me/+4Q8XGas9f4M2MWMy"
+            href="https://t.me/bepuldars29fevral"
             target="_blank"
           >
             <img src="/images/telegram.svg" alt="Telegram" />

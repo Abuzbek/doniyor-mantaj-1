@@ -82,7 +82,7 @@ export default function Home() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
             </span>
-            <span>15-16-17 fevral</span> <span>|</span> <span>Online</span>
+            <span>29 fevral</span> <span>|</span> <span>Online</span>
           </div>
         </div>
         <div className="flex flex-col md:items-start items-center sm:text-start text-center xs:gap-6 gap-4 md:col-span-12">
@@ -111,6 +111,21 @@ export default function Home() {
               >
                 Ro‘yxatdan o‘tish
               </button>
+              <div className="bg-[#38375F] p-3 rounded-2xl md:hidden flex flex-col items-center gap-3">
+                <img
+                  src="/images/gift.png"
+                  alt=""
+                  className={classNames("!w-[42px]", style.gift)}
+                />
+                <div className="flex flex-col gap-1">
+                  <p className="text-sm leading-[1.0625rem] font-medium text-white">
+                    Ro‘yxatdan o‘tganlarga bonus qo‘llanma
+                  </p>
+                  <p className="text-sm leading-[1.0625rem] font-medium text-[#E59AFF]">
+                    “Telefon orqali 1000$ daromad topish”
+                  </p>
+                </div>
+              </div>
             </div>
             <div className="flex flex-col xs:gap-5 gap-4 md:max-w-lg max-w-full md:p-0 p-5 md:bg-transparent bg-[#1F1F1F] md:rounded-none rounded-2xl">
               <h4 className="text-lg text-white uppercase font-semibold">
@@ -127,23 +142,23 @@ export default function Home() {
                   <i className={style.indicator}>
                     <Indicator />
                   </i>
-                  Qanday qilib shaxsiy brendni to’g’ri qurish va mashxurlikka erishish yo’llari
+                  Mijoz topishning Top 3 usuli
                 </li>
                 <li className="!text-start md:col-span-2 flex items-center gap-3 font-medium xs:text-base text-sm">
                   <i className={style.indicator}>
                     <Indicator />
                   </i>
-                  Videolar orqali daromadni bir necha karraga oshirish
+                  Mobilografning mijozlari kimlar
                 </li>
-                <li className="!text-start md:col-span-2 flex items-center gap-3 font-medium xs:text-base text-sm">
+                {/* <li className="!text-start md:col-span-2 flex items-center gap-3 font-medium xs:text-base text-sm">
                   <i className={style.indicator}>
                     <Indicator />
                   </i>
                   2024-yilda trenddagi kasb tanlash
                 </li>
                 <li className="!text-start md:col-span-2 flex items-center gap-3 font-medium xs:text-base text-sm">
-                Sirlarini ko’rib chiqamiz
-                </li>
+                  Sirlarini ko’rib chiqamiz
+                </li> */}
               </ul>
               <h4 className="text-center md:hidden block text-[#E59AFF] text-[28px] font-semibold">
                 BEPUL
@@ -157,16 +172,24 @@ export default function Home() {
               >
                 Ro‘yxatdan o‘tish
               </button>
-              <div className="bg-[#38375F] p-3 rounded-2xl md:hidden flex flex-col items-center gap-3">
-                <img src="/images/gift.png" alt="" className={classNames('!w-[42px]', style.gift)} />
-                <div className="flex flex-col gap-1">
-                  <p className="text-sm leading-[1.0625rem] font-medium text-white">Ro‘yxatdan o‘tganlarga bonus qo‘llanma</p>
-                  <p className="text-sm leading-[1.0625rem] font-medium text-[#E59AFF]">“Telefon orqali 1000$ daromad topish”</p>
-                </div>
-              </div>
             </div>
           </div>
           <div className="flex flex-col items-start gap-6">
+            <div className="bg-[#38375F] py-[10px] px-[8px] rounded-2xl md:flex hidden  items-center gap-3">
+              <img
+                src="/images/gift.png"
+                className={classNames("!w-[42px]", style.gift)}
+                alt=""
+              />
+              <div className="flex flex-col gap-1.5">
+                <p className="text-sm leading-[1.0625rem] font-medium text-white">
+                  Ro‘yxatdan o‘tganlarga bonus qo‘llanma
+                </p>
+                <p className="text-sm leading-[1.0625rem] font-medium text-[#E59AFF]">
+                  “Telefon orqali 1000$ daromad topish”
+                </p>
+              </div>
+            </div>
             <button
               onClick={() => modalRef.current?.openModal()}
               className={`md:block hidden ` + style.button}
@@ -174,13 +197,6 @@ export default function Home() {
             >
               Ro‘yxatdan o‘tish
             </button>
-            <div className="bg-[#38375F] py-[10px] px-[8px] rounded-2xl md:flex hidden  items-center gap-3">
-                <img src="/images/gift.png" className={classNames('!w-[42px]', style.gift)} alt="" />
-                <div className="flex flex-col gap-1.5">
-                  <p className="text-sm leading-[1.0625rem] font-medium text-white">Ro‘yxatdan o‘tganlarga bonus qo‘llanma</p>
-                  <p className="text-sm leading-[1.0625rem] font-medium text-[#E59AFF]">“Telefon orqali 1000$ daromad topish”</p>
-                </div>
-              </div>
           </div>
         </div>
         <div></div>
